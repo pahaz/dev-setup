@@ -44,7 +44,7 @@ alias drmiall="docker rmi $(docker images -q)"
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
 # Run ubuntu bash and mount current work dirrectory
 alias drun="docker run -itP --rm -v ~:/root:ro -v $(pwd):/cwd -w /cwd"
-alias dbash="drun ubuntu bash"
+alias dbash="drun buildpack-deps bash"
 alias dphp="drun php php"
 alias druby="drun ruby ruby"
 alias dnode="drun node node"
