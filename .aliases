@@ -20,6 +20,30 @@ alias j="jobs"
 alias gs="git s"
 alias gd="git d"
 alias gc="git checkout"
+# Show all alias related git
+dalias() { alias | grep 'git' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
+
+# DOCKER
+# Get container process
+alias dps="docker ps"
+# Get process included stop container
+alias dpsa="docker ps -a"
+# Get images
+alias di="docker images"
+# Get container IP
+alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+# Get latest container ID
+alias dlast="docker ps -l -q"
+# Stop all containers
+alias dstop="docker stop $(docker ps -a -q)"
+# Remove all containers
+alias drmall="docker rm $(docker ps -a -q)"
+# Remove all images
+alias drmiall="docker rmi $(docker images -q)"
+# Show all alias related docker
+dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
+# Run ubuntu bash and mount current work dirrectory
+alias dr="docker run -it --rm -v ~:/root:ro -v $(pwd):/pwd ubuntu bash -c 'cd /pwd && exec bash'"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
