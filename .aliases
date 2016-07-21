@@ -21,7 +21,7 @@ alias gs="git s"
 alias gd="git d"
 alias gc="git checkout"
 # Show all alias related git
-dalias() { alias | grep 'git' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
+galias() { alias | grep 'git' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
 
 # DOCKER
 # Get container process
