@@ -43,7 +43,12 @@ alias drmiall="docker rmi $(docker images -q)"
 # Show all alias related docker
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
 # Run ubuntu bash and mount current work dirrectory
-alias dr="docker run -it --rm -v ~:/root:ro -v $(pwd):/pwd ubuntu bash -c 'cd /pwd && exec bash'"
+alias drun="docker run -itP --rm -v ~:/root:ro -v $(pwd):/cwd -w /cwd"
+alias dbash="drun ubuntu bash"
+alias dphp="drun php php"
+alias druby="drun ruby ruby"
+alias dnode="drun node node"
+alias dpython="drun python python"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
