@@ -27,4 +27,4 @@ export GREP_OPTIONS='--color=auto';
 
 # Python virtualenvwraper dir
 export WORKON_HOME=~/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
