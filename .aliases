@@ -10,6 +10,7 @@ alias -- -="cd -"
 alias ~dl="cd ~/Downloads"
 alias ~dt="cd ~/Desktop"
 alias ~d="cd ~/Documents"
+alias ~p="cd ~/PycharmProjects/"
 
 alias g="git"
 alias h="history"
